@@ -2,14 +2,15 @@ package Entity;
 
 import java.util.ArrayList;
 
-public class User {
-    private Integer ID;
-    private String firstName;
-    private String lastName;
-    private String phoneNbr;
-    private String email;
-    private String password_hash;
-    private ArrayList<Role> roles;
+public abstract class User {
+    protected Integer ID;
+    protected String firstName;
+    protected String lastName;
+    protected String phoneNbr;
+    protected String email;
+    protected String password_hash;
+    public ArrayList<Role> roles;
+
 
     public Integer getID() {
         return ID;

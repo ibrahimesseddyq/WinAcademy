@@ -6,7 +6,20 @@ public class School {
     private int ID;
     private String name;
     private String siteUrl;
-    private ArrayList<Departement> departements;
+    public ArrayList<Departement> departements;
+
+    public ArrayList<Departement> getDepartements() {
+        return departements;
+    }
+
+
+
+    public School(int ID, String name, String siteUrl) {
+        this.ID = ID;
+        this.name = name;
+        this.siteUrl = siteUrl;
+        this.departements = new ArrayList<>();
+    }
 
     public int getID() {
         return ID;
@@ -30,5 +43,14 @@ public class School {
 
     public void setSiteUrl(String siteUrl) {
         this.siteUrl = siteUrl;
+    }
+    @Override
+    public String toString() {
+        return "School{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", siteUrl='" + siteUrl + '\'' +
+                ", departements=" + departements +
+                '}';
     }
 }

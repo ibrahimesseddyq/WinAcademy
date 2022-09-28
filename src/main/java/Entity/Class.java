@@ -5,7 +5,13 @@ import java.util.ArrayList;
 public class Class {
     private Integer ID;
     private String name;
-    private ArrayList<Student> students;
+    public ArrayList<Student> students;
+
+    public Class(Integer ID, String name) {
+        this.ID = ID;
+        this.name = name;
+        this.students = new ArrayList<>();
+    }
 
     public Integer getID() {
         return ID;

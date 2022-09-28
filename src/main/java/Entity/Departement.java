@@ -5,7 +5,23 @@ import java.util.ArrayList;
 public class Departement {
     private int ID;
     private String name;
-    private ArrayList<Teacher> teachers;
+    public ArrayList<Teacher> teachers;
+
+    public Departement(int ID, String name) {
+        this.ID = ID;
+        this.name = name;
+        teachers = new ArrayList<>();
+    }
+
+    @Override
+    public String toString() {
+        return "Departement{" +
+                "ID=" + ID +
+                ", name='" + name + '\'' +
+                ", teachers=" + teachers +
+                '}';
+    }
+
     public int getID() {
         return ID;
     }
