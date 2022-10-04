@@ -7,6 +7,10 @@ public class Departement {
     private String name;
     public ArrayList<Teacher> teachers;
 
+    public ArrayList<Teacher> getTeachers() {
+        return teachers;
+    }
+
     public Departement(int ID, String name) {
         this.ID = ID;
         this.name = name;

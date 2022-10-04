@@ -3,6 +3,7 @@ package Entity.builders;
 import Entity.Student;
 import Entity.Teacher;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class StudentBuilder extends UserBuilder<StudentBuilder> {
@@ -12,6 +13,7 @@ public class StudentBuilder extends UserBuilder<StudentBuilder> {
         return this;
     }
     public Student build(){
+        this.roles=new ArrayList<>();
         return new Student(super.ID,super.firstName,super.lastName,super.phoneNbr,super.email,super.password_hash,this.startDate);
     }
 

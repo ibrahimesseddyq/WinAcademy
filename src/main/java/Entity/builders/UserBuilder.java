@@ -1,6 +1,9 @@
 package Entity.builders;
 
+import Entity.Role;
 import Entity.User;
+
+import java.util.ArrayList;
 
 public abstract class UserBuilder <T extends UserBuilder<?>>{
     protected Integer ID;
@@ -9,7 +12,12 @@ public abstract class UserBuilder <T extends UserBuilder<?>>{
     protected String phoneNbr;
     protected String email;
     protected String password_hash;
+    public ArrayList<Role> roles= new ArrayList<>();
 
+    public T Roles(Role role){
+        this.roles.add(role);
+        return (T)this;
+    }
     public T ID(int ID){
         this.ID=ID;
         return (T)this;

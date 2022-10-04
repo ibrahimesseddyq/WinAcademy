@@ -1,8 +1,16 @@
 package Entity;
 
+import Auth.AuthRoles;
+
 public class Role {
     private Integer ID;
-    private String title;
+    private AuthRoles title;
+
+    public Role(Integer ID, AuthRoles title) {
+
+        this.ID = ID;
+        this.title = title;
+    }
 
     public Integer getID() {
         return ID;
@@ -12,11 +20,11 @@ public class Role {
         this.ID = ID;
     }
 
-    public String getTitle() {
+    public AuthRoles getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(AuthRoles title) {
         this.title = title;
     }
 }

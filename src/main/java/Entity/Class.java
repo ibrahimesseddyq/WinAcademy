@@ -3,7 +3,7 @@ package Entity;
 import java.util.ArrayList;
 
 public class Class {
-    private Integer ID;
+    private static Integer ID;
     private String name;
     public ArrayList<Student> students;
 

@@ -6,6 +6,11 @@ import java.util.Date;
 
 public class Teacher extends User {
     private Calendar startWorkDate;
+
+    public ArrayList<Class> getClasses() {
+        return classes;
+    }
+
     private Subject subject;
     public ArrayList<Class> classes;
 
@@ -18,6 +23,7 @@ public class Teacher extends User {
         this.password_hash=password_hash;
         this.startWorkDate = startWorkDate;
         this.subject = subject;
+        this.classes =  new ArrayList<>();
     }
 
     public Calendar getStartWorkDate() {

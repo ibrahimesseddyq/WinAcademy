@@ -3,9 +3,10 @@ package Entity;
 import java.util.ArrayList;
 
 public abstract class User {
-    protected Integer ID;
+    protected static Integer ID;
     protected String firstName;
     protected String lastName;
+
     protected String phoneNbr;
     protected String email;
     protected String password_hash;
