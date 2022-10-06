@@ -43,6 +43,7 @@ public class StudentService {
                 "Date ="+date+ " \n";
 
     }
+
     public Float getExamsAverageByStudent(String email){
         ArrayList<ExamGrade> grades = this.stdrepo.getExamsByStudent(this.db,email);
         List gr =grades.stream().map(grade->grade.getExamGrade()).reduce((a, b)->a+b).stream().collect(Collectors.toList());

@@ -40,7 +40,7 @@ public class StudentRepository {
             }
         return  students;
     }
-    public Student StudentByName(Database db,String name){
+    public Student StudentByID(Database db,int id){
         ArrayList<Student> students = new ArrayList<Student>();
         for(int i =0;i<db.getDb().size();i++){
             for (int j = 0; j < db.getDb().get(i).departements.size(); j++) {
@@ -48,7 +48,7 @@ public class StudentRepository {
                     for (int k = 0; k < db.getDb().get(i).departements.get(j).getTeachers().get(l).getClasses().size(); k++) {
                         for (int m = 0; m < db.getDb().get(i).departements.get(j).getTeachers().get(l).getClasses().get(k).students.size(); m++) {
                             Student student  = db.getDb().get(i).departements.get(j).getTeachers().get(l).getClasses().get(k).students.get(m);
-                            if(student.getFirstName().equals(name)){
+                            if(student.getID().equals(id)){
                                 return student;
                             }
                         }

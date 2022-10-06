@@ -3,6 +3,7 @@ package Database;
 import Auth.AuthRoles;
 import Entity.*;
 import Entity.Class;
+import Entity.builders.AdminBuilder;
 import Entity.builders.StudentBuilder;
 import Entity.builders.TeacherBuilder;
 import util.Date;
@@ -15,7 +16,9 @@ public class DBInitialization {
 
     public School initializeSchool(){
         School youcode = new School(1,"youcode","youcode.ma");
-        youcode.setAdmin(new Admin(1,"zineb","oussous","0700000000","z.oussous@gmail.com","admin1"));
+        Admin admin = new AdminBuilder().ID(1).firstName("zineb").lastname("oussous").phonenbr("0700000000").email("z.oussous@gmail.com").password_hash("admin1").Roles(new Role(1,AuthRoles.ABS_ADMIN)).build();
+        youcode.setAdmin(admin);
+
         return youcode;
     }
     public School initializeDepartementAndAbove(){

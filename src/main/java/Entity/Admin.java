@@ -8,6 +8,5 @@ public class Admin extends User{
         this.phoneNbr=phoneNbr;
         this.email=email;
         this.password_hash=password_hash;
-        this.roles
     }
 }
