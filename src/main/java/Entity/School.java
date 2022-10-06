@@ -6,6 +6,7 @@ public class School {
     private int ID;
     private String name;
     private String siteUrl;
+    private Admin admin;
     public ArrayList<Departement> departements;
 
     public ArrayList<Departement> getDepartements() {
@@ -53,4 +54,16 @@ public class School {
                 ", departements=" + departements +
                 '}';
     }
+
+    public Admin getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(Admin admin) {
+        this.admin = admin;
+    }
+    public void addDepartement(Departement departement){
+        this.departements.add(departement);
+    }
+
 }

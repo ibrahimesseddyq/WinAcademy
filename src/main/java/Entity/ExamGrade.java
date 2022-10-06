@@ -7,8 +7,16 @@ import java.util.Date;
 public class ExamGrade {
     private Integer ID;
     private Float examGrade;
-    private ArrayList<Subject> subjects;
+    private Subject subject;
     private Calendar examDate;
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
+    }
 
     public Integer getID() {
         return ID;

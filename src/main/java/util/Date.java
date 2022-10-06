@@ -16,6 +16,11 @@ public class Date {
 
         return calendar;
     }
+    public static String getStringFromDate(Calendar cal){
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
+        return sdf.format(cal.getTime());
+    }
+
 
 
 

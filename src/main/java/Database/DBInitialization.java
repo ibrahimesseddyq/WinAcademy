@@ -15,6 +15,7 @@ public class DBInitialization {
 
     public School initializeSchool(){
         School youcode = new School(1,"youcode","youcode.ma");
+        youcode.setAdmin(new Admin(1,"zineb","oussous","0700000000","z.oussous@gmail.com","admin1"));
         return youcode;
     }
     public School initializeDepartementAndAbove(){
@@ -65,6 +66,20 @@ public class DBInitialization {
                 .Roles(student_role)
                 .startdate(Date.setDate(1,1,2022))
                 .build();
+        ExamGrade jgrade1 = new ExamGrade();
+        jgrade1.setExamGrade(15.0f);
+        jgrade1.setID(1);
+        Subject jee = new Subject(1,"jee");
+        jgrade1.setSubject(jee);
+        ExamGrade jgrade2 = new ExamGrade();
+        jgrade2.setExamGrade(120.0f);
+        jgrade2.setID(2);
+        Subject jfx = new Subject(1,"jfx");
+        jgrade2.setSubject(jfx);
+
+        jamalRaouj.addToGrades(jgrade1);
+        jamalRaouj.addToGrades(jgrade2);
+
         Student ibrahimess = new StudentBuilder()
                 .ID(2)
                 .firstName("Ibrahim")

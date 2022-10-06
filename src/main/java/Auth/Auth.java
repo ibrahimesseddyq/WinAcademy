@@ -1,7 +1,9 @@
 package Auth;
 
 import Database.Database;
+import Entity.Admin;
 import Entity.Student;
+import Repository.AdminRepository;
 import Repository.StudentRepository;
 
 import java.util.Scanner;
@@ -48,18 +50,23 @@ public class Auth {
             case "student":
             case "Student":
                 authrole = AuthRoles.STUDENT;
+                break;
+
             case "Teacher":
             case "TEACHER":
             case "teacher":
                 authrole = AuthRoles.TEACHER;
+                break;
             case "SCHOOL ADMIN":
             case "school admin":
             case "School Admin":
                 authrole = AuthRoles.REG_ADMIN;
+                break;
             case "Admin":
             case "ADMIN":
             case "admin":
                 authrole = AuthRoles.ABS_ADMIN;
+                break;
 
 
 
@@ -74,10 +81,13 @@ public class Auth {
 
     }
     public Boolean checkCred(Database db){
+        System.out.println(this.role);
         if(this.role == AuthRoles.STUDENT){
             StudentRepository strep = new StudentRepository();
             Student student = strep.StudentByEmail(db,email);
+            System.out.println(student);
             if(student.getPassword_hash().equals(password)){
+                System.out.println("You are logged in");
                 return true;
             }
             else
@@ -85,7 +95,16 @@ public class Auth {
                 return false;
             }
         } else if (this.role == AuthRoles.ABS_ADMIN) {
-            return false;
+            AdminRepository admrep = new AdminRepository();
+            Admin admin = admrep.getAdminInfos(db);
+            if(admin.getPassword_hash().equals(password)){
+                System.out.println("You are logged in");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         return false;
 
@@ -94,4 +113,20 @@ public class Auth {
 //
 //    }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public AuthRoles getRole() {
+        return role;
+    }
+
+    @Override
+    public String toString() {
+        return "Auth{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", role=" + role +
+                '}';
+    }
 }

@@ -2,6 +2,7 @@ package Repository;
 
 import Database.Database;
 import Entity.Class;
+import Entity.ExamGrade;
 import Entity.Student;
 
 import java.util.ArrayList;
@@ -65,7 +66,7 @@ public class StudentRepository {
                     for (int k = 0; k < db.getDb().get(i).departements.get(j).getTeachers().get(l).getClasses().size(); k++) {
                         for (int m = 0; m < db.getDb().get(i).departements.get(j).getTeachers().get(l).getClasses().get(k).students.size(); m++) {
                             Student student  = db.getDb().get(i).departements.get(j).getTeachers().get(l).getClasses().get(k).students.get(m);
-                            if(student.getFirstName().equals(email)){
+                            if(student.getEmail().equals(email)){
                                 return student;
                             }
                         }
@@ -74,6 +75,10 @@ public class StudentRepository {
             }
         }
         return  null;
+    }
+    public ArrayList<ExamGrade> getExamsByStudent(Database db ,String email){
+
+        return this.StudentByEmail(db,email).getGrades();
     }
 //    public Student addStudentToClasse(int classe_id,Student student,Database db){
 //        try {

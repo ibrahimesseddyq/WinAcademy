@@ -16,6 +16,7 @@ public class Student extends User{
         this.email =email ;
         this.password_hash=password_hash;
         this.startDate = startDate;
+        this.grades=new ArrayList<>();
     }
 
     public Calendar getStartDate() {
@@ -25,6 +26,14 @@ public class Student extends User{
     public void setStartDate(Calendar startDate) {
         this.startDate = startDate;
     }
+
+    public ArrayList<ExamGrade> getGrades() {
+        return grades;
+    }
+    public void addToGrades(ExamGrade grade){
+        this.grades.add(grade);
+    }
+
 
     @Override
     public String toString() {
